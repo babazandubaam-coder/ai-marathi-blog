@@ -1,0 +1,207 @@
+BLOG WEBSITE TOTAL CODE.
+
+१. index.html (मुख्य साचा
+----------------------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ai-marathi-blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>ai-marathi-blog</h1>
+    <p>Artificial Intelligence बद्दल संपूर्ण माहिती</p>
+    <nav>
+        <a href="index.html">🏠 होम</a>
+        <a href="about.html">ℹ️ आमच्याबद्दल</a>
+        <a href="contact.html">📞 संपर्क</a>
+    </nav>
+    <button id="theme-toggle">🌙 डार्क मोड</button>
+</header>
+
+<div class="container">
+    <div class="box side-box">
+        <h3>विषय निवडा</h3>
+        <hr>
+        <ul>
+            <li><a href="#" onclick="showContent('ai-info')">🔹 AI म्हणजे काय?</a></li>
+            <li><a href="#" onclick="showContent('ai-tools')">🔹 AI Tools 2026</a></li>
+            <li><a href="#" onclick="showContent('ai-future')">🔹 AI चे भविष्य</a></li>
+        </ul>
+    </div>
+
+    <div class="box image-box">
+        <img src="ai-image.jpg" alt="AI Technology Image">
+    </div>
+
+    <div class="box content-box">
+        <h2 id="content-title">स्वागत आहे!</h2>
+        <p id="content-text">माहिती पाहण्यासाठी डाव्या बाजूच्या विषयावर क्लिक करा. 👉</p>
+        <button id="content-button" style="display:none;">आणखी माहितीसाठी येथे क्लिक करा</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 ai-marathi-blog | सर्व हक्क सुरक्षित</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+STYLE.CSS
+
+/* मुख्य सेटिंग्ज */
+body {
+    font-family: 'Poppins', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    transition: all 0.3s ease;
+    letter-spacing: -0.2px !important;
+    line-height: 1.6 !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* हेडर डिझाईन */
+header {
+    background: linear-gradient(135deg, #002f6c, #004aad);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header nav a {
+    color: #ffffff !important;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 700 !important;
+    font-size: 17px !important;
+    opacity: 1 !important;
+    filter: none !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #ffcc00 !important;
+}
+
+/* कंटेनर आणि बॉक्स लेआउट */
+.container {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 10%;
+}
+
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    min-width: 300px;
+    flex: 1;
+}
+
+/* इमेज सेटिंग */
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* मजकूर सेटिंग */
+#content-text {
+    font-weight: 500 !important;
+    color: #111 !important;
+    line-height: 1.8 !important;
+    text-align: justify;
+}
+
+#content-button {
+    background-color: #004aad !important;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+#content-button:hover {
+    background-color: #0066ff !important;
+    transform: scale(1.05);
+}
+
+/* डार्क मोड सेटिंग */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .box {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+body.dark-mode #content-text {
+    color: #ddd !important;
+}
+
+/* फुटर */
+footer {
+    background: linear-gradient(90deg, #002f6c, #004aad) !important;
+    color: white !important;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+----------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+. script.js (वेबसाईटची हालचाल)
+
+// माहिती बदलण्याचे फंक्शन
+function showContent(topic) {
+    const title = document.getElementById('content-title');
+    const text = document.getElementById('content-text');
+    const button = document.getElementById('content-button');
+
+    if (topic === 'ai-info') {
+        title.innerText = "AI म्हणजे काय?";
+        text.innerText = "Artificial Intelligence (AI) म्हणजे मशिनला दिलेली मानवी बुद्धिमत्ता. याद्वारे संगणक स्वतः निर्णय घेऊ शकतो आणि शिकू शकतो.";
+        button.style.display = "block";
+    } else if (topic === 'ai-tools') {
+        title.innerText = "AI Tools 2026";
+        text.innerText = "आजच्या काळात ChatGPT, Midjourney आणि अनेक नवीन AI टूल्स उपलब्ध आहेत जे आपले काम सोपे करतात.";
+        button.style.display = "block";
+    } else if (topic === 'ai-future') {
+        title.innerText = "AI चे भविष्य";
+        text.innerText = "भविष्यात AI आरोग्य, शिक्षण आणि उद्योग क्षेत्रात मोठी क्रांती घडवून आणणार आहे.";
+        button.style.display = "block";
+    }
+}
+
+// डार्क मोड टॉगल
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggle.innerText = "☀️ लाईट मोड";
+    } else {
+        themeToggle.innerText = "🌙 डार्क मोड";
+    }
+});
